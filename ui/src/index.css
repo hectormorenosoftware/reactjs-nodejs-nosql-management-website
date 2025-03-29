@@ -1,0 +1,259 @@
+body {
+  font-family: "Lato";
+  margin: 0;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
+  background-color: #016fd0;
+  color: white;
+  font-weight: 350;
+}
+
+.table-data {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-spacing: 0;
+  font-weight: 350;
+}
+
+.heading-subject {
+  font-weight: bold;
+  font-size: 45px;
+  text-align: center;
+}
+
+.flex-box-searchbar-searchbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 350 !important;
+}
+
+#align-text {
+  text-align: center;
+}
+
+#width-login-username {
+  width: 25rem;
+}
+
+#width-login-password {
+  width: 25rem;
+}
+
+.flexbox-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-box-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.margin-create-employee-fields {
+  margin-bottom: 10px;
+}
+
+.search-bar {
+  height: 38.5px;
+  width: 50%;
+  font-weight: 350;
+  font-size: 1rem;
+  font-family: "Lato";
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #016fd0;
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+.select-choice {
+  cursor: pointer;
+  width: 20rem;
+  height: 2rem;
+  margin: 10px;
+}
+
+.text-area-notes {
+  width: 80%;
+  height: 10rem;
+}
+
+.client-button {
+  width: 200px;
+  height: 45px;
+  color: white;
+  border-radius: 18px;
+  border: 1.5px solid black;
+  background-color: #016fd0;
+  cursor: pointer;
+  font-weight: 350;
+  font-size: 1rem;
+  font-family: "Lato";
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.client-button:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  color: #016fd0;
+  background-color: white;
+}
+
+.client-button-two {
+  width: 200px;
+  height: 45px;
+  color: white;
+  border-radius: 18px;
+  border: 1.5px solid white;
+  background-color: #1d2a35;
+  cursor: pointer;
+  font-weight: 350;
+  font-size: 1rem;
+  font-family: "Lato";
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.client-button-two:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  color: black;
+  background-color: white;
+  border: 1.5px solid black;
+}
+
+.edit-button {
+  width: 200px;
+  height: 45px;
+  color: white;
+  border-radius: 18px;
+  border: 1.5px solid black;
+  background-color: #7cbb00;
+  cursor: pointer;
+  font-weight: 350;
+  font-size: 1rem;
+  font-family: "Lato";
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.edit-button:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  color: #7cbb00;
+  background-color: white;
+}
+
+.delete-button {
+  width: 200px;
+  height: 45px;
+  color: white;
+  border-radius: 18px;
+  border: 1.5px solid black;
+  background-color: #de0a26;
+  cursor: pointer;
+  font-weight: 350;
+  font-size: 1rem;
+  font-family: "Lato";
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.delete-button:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  color: #de0a26;
+  background-color: white;
+}
+
+.first-row-background {
+  cursor: pointer;
+}
+
+.first-row-background:hover {
+  color: #016fd0;
+  background-color: white;
+}
+
+.second-row-background {
+  cursor: pointer;
+}
+
+.second-row-background:hover {
+  color: black;
+  background-color: white;
+}
+
+@keyframes BlinkingAnimation {
+  50% {
+    opacity: 1;
+  }
+}
+
+.Hero {
+  position: relative;
+  text-align: center;
+}
+
+.Hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  line-height: 1.5;
+  animation: BlinkingAnimation 4s linear infinite;
+  opacity: 0;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 17rem;
+  bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .Hero p {
+    font-size: 24px;
+  }
+}
+
+.deleted-employee-message {
+  opacity: 0;
+  animation: BlinkingAnimation 1.7s linear infinite;
+  text-align: center;
+}
+
+.form-errors {
+  opacity: 0;
+  color: #ffbb00;
+  animation: BlinkingAnimation 1.7s linear infinite;
+}
+
+.form-warning {
+  opacity: 0;
+  color: #ffbb00;
+  animation: BlinkingAnimation 1.7s linear infinite;
+}
