@@ -2,7 +2,7 @@
   "JohnBolton": {
     "name": "John",
     "lastName": "Bolton",
-    "userName": "JonBolton",
+    "userName": "JohnBolton",
     "admin": "true",
     "password": "testing"
   }
