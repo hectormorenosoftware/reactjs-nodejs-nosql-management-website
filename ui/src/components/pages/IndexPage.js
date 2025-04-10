@@ -13,7 +13,6 @@ import {
   searchByLastNameRedux,
   sortByFirstNameRedux,
   sortByLastNameRedux,
-  getSprintOptionsRedux,
 } from "../../redux/actions/userActions";
 import { stringRegexPattern, addASpace } from "../../utils";
 import MicrosoftLogo from "../../images/microsoftlogo.png";
@@ -32,20 +31,13 @@ class IndexPage extends React.PureComponent {
     };
   }
   componentDidMount() {
-    const {
-      data,
-      history,
-      loginSuccess,
-      getSprintOptionsFuncProp,
-      getDataIndexPage,
-    } = this.props;
+    const { data, history, loginSuccess, getDataIndexPage } = this.props;
 
     if (loginSuccess === false) {
       return history.push("/");
     }
 
     if (data.length === 0) {
-      getSprintOptionsFuncProp();
       return getDataIndexPage();
     }
 
@@ -226,12 +218,10 @@ class IndexPage extends React.PureComponent {
     const {
       loading,
       data,
-      salariesTotal,
       getDataIndexPage,
       userName,
       changedColorProp,
       deletedEmployeeMessage,
-      sprintOptions,
     } = this.props;
 
     if (loading === true) {
@@ -443,19 +433,14 @@ class IndexPage extends React.PureComponent {
             <table className="table-data">
               <thead>
                 <tr>
-                  <th>Company Role</th>
+                  <th>Job Name</th>
                   <th>Name</th>
                   <th>Last Name</th>
-                  <th>Personal Email</th>
-                  <th>Personal Number</th>
-                  <th>Company Email</th>
-                  <th>Company Number</th>
+                  <th>Email</th>
+                  <th>Number</th>
                   <th>Slack ID</th>
                   <th>Notes</th>
                   <th>Status</th>
-                  <th>
-                    Salary <br></br> Salaries Total: {salariesTotal}
-                  </th>
                   <th>Edit Notes</th>
                   <th>Delete</th>
                 </tr>
@@ -485,17 +470,7 @@ class IndexPage extends React.PureComponent {
                             {value.phoneNumber}{" "}
                           </a>
                         </td>
-                        <td>
-                          {" "}
-                          <a href={`mailto:${value.companyEmail}`}>
-                            {value.companyEmail}
-                          </a>
-                        </td>
-                        <td style={{ whiteSpace: "nowrap" }}>
-                          <a href={`tel:${value.companyNumber}`}>
-                            {value.companyNumber}
-                          </a>
-                        </td>
+
                         <td>{value.slackID}</td>
                         <td style={{ whiteSpace: "nowrap" }}>
                           {value.notes.length === 0
@@ -507,7 +482,7 @@ class IndexPage extends React.PureComponent {
                             ? "You need to have a note to be able to select a status"
                             : value.progress}
                         </td>
-                        <td>{value.salary}</td>
+
                         <td>
                           <button
                             type="button"
@@ -592,7 +567,6 @@ function mapStateToProps(state) {
     userData: state.userReducer.userData,
     loading: state.userReducer.loading,
     loginSuccess: state.userReducer.loginSuccess,
-    salariesTotal: state.userReducer.salariesTotal,
     userName: state.userReducer.userName,
     changedColorProp: state.userReducer.changedColor,
     deletedEmployeeMessage: state.userReducer.deletedEmployeeMessage,
@@ -621,10 +595,6 @@ function mapDispatchToProps(dispatch) {
     sortByLastNameFuncProp: bindActionCreators(sortByLastNameRedux, dispatch),
     resetDeletedMessageFuncProp: () =>
       dispatch({ type: "RESET_DELETED_MESSAGE" }),
-    getSprintOptionsFuncProp: bindActionCreators(
-      getSprintOptionsRedux,
-      dispatch
-    ),
   };
 }
 

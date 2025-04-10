@@ -97,10 +97,7 @@ async function createEmployeeFunc(
   userName,
   personalEmail,
   phoneNumber,
-  companyEmail,
-  companyNumber,
   slackID,
-  salary,
   companyRole,
   notes,
   progress
@@ -126,10 +123,7 @@ async function createEmployeeFunc(
         userName: userName,
         personalEmail: personalEmail,
         phoneNumber: phoneNumber,
-        companyEmail: companyEmail,
-        companyNumber: companyNumber,
         slackID: slackID,
-        salary: salary,
         companyRole: companyRole,
         notes: notes,
         progress: progress,
@@ -256,10 +250,7 @@ async function updatesNotesAndProgress(details) {
     userName,
     personalEmail,
     phoneNumber,
-    companyEmail,
-    companyNumber,
     slackID,
-    salary,
     companyRole,
     notes,
     progress,
@@ -285,65 +276,13 @@ async function updatesNotesAndProgress(details) {
         userName: userName,
         personalEmail: personalEmail,
         phoneNumber: phoneNumber,
-        companyEmail: companyEmail,
-        companyNumber: companyNumber,
         slackID: slackID,
-        salary: salary,
         companyRole: companyRole,
         notes: notes,
         progress: progress,
       }),
       headers: myHeaders,
     });
-    const data = await res.json();
-
-    return data;
-  } catch (e) {
-    throw new Error(e);
-  }
-}
-
-async function editSprintOptions(sprintStartedDate, sprintEndDate) {
-  try {
-    let url = null;
-    if (process.env.NODE_ENV === "development") {
-      url = "http://localhost:5000/edit-sprint-options";
-    }
-    if (process.env.NODE_ENV === "production") {
-      url = "http://localhost:5000/edit-sprint-options";
-    }
-    const myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-    myHeaders.append("Content-Type", "application/json");
-
-    const res = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        sprintStartedDate,
-        sprintEndDate,
-      }),
-      headers: myHeaders,
-    });
-
-    const data = await res.json();
-
-    return data;
-  } catch (e) {
-    throw new Error(e);
-  }
-}
-
-async function getSprintOptions() {
-  try {
-    let url = null;
-    if (process.env.NODE_ENV === "development") {
-      url = "http://localhost:5000/sprint-options-details";
-    }
-    if (process.env.NODE_ENV === "production") {
-      url = "http://localhost:5000/sprint-options-details";
-    }
-
-    const res = await fetch(url);
     const data = await res.json();
 
     return data;
@@ -364,6 +303,4 @@ export {
   sortByFirstName,
   sortByLastName,
   updatesNotesAndProgress,
-  editSprintOptions,
-  getSprintOptions,
 };

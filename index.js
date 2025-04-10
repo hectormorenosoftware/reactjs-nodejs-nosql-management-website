@@ -43,13 +43,9 @@ if (cluster.isMaster) {
       const rawData = fs.readFileSync("./nosqldatabase/accounts_dev.json");
       const jsonData = JSON.parse(rawData);
       const arrayData = Object.values(jsonData);
-      const sumAllSalaries = arrayData.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
 
       return res.send({
         arrayData: arrayData.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -58,11 +54,7 @@ if (cluster.isMaster) {
       const jsonData = JSON.parse(rawData);
       const arrayData = Object.values(jsonData);
 
-      const sumAllSalaries = arrayData.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
-      return res.send({ arrayData: arrayData.sort(sortFunc), sumAllSalaries });
+      return res.send({ arrayData: arrayData.sort(sortFunc) });
     }
     return res.send([]);
   });
@@ -196,10 +188,7 @@ if (cluster.isMaster) {
       personalEmail,
       userName,
       phoneNumber,
-      companyEmail,
-      companyNumber,
       slackID,
-      salary,
       companyRole,
       notes,
       progress,
@@ -215,10 +204,7 @@ if (cluster.isMaster) {
         userName,
         personalEmail,
         phoneNumber,
-        companyEmail,
-        companyNumber,
         slackID,
-        salary,
         companyRole,
         notes,
         progress,
@@ -231,14 +217,9 @@ if (cluster.isMaster) {
       const jsonToSend = JSON.parse(dataToSend);
       const arrToSend = Object.values(jsonToSend);
 
-      const sumAllSalaries = arrToSend.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         message: "Successfully created employee",
         data: arrToSend.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -252,10 +233,7 @@ if (cluster.isMaster) {
         userName,
         personalEmail,
         phoneNumber,
-        companyEmail,
-        companyNumber,
         slackID,
-        salary,
         companyRole,
         notes,
         progress,
@@ -268,14 +246,9 @@ if (cluster.isMaster) {
       const jsonToSend = JSON.parse(dataToSend);
       const arrToSend = Object.values(jsonToSend);
 
-      const sumAllSalaries = arrToSend.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         message: "Successfully created employee",
         data: arrToSend.sort(sortFunc),
-        sumAllSalaries,
       });
     }
     res.send("Could not create employee");
@@ -300,14 +273,9 @@ if (cluster.isMaster) {
       const jsonToSend = JSON.parse(dataToSend);
       const arrToSend = Object.values(jsonToSend);
 
-      const sumAllSalaries = arrToSend.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         message: `Successfully deleted ${companyRole}: ${userFirstName} ${userLastName}`,
         data: arrToSend.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -327,14 +295,9 @@ if (cluster.isMaster) {
       const jsonToSend = JSON.parse(dataToSend);
       const arrToSend = Object.values(jsonToSend);
 
-      const sumAllSalaries = arrToSend.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         message: `Successfully deleted ${companyRole}: ${userFirstName} ${userLastName}`,
         data: arrToSend.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -351,16 +314,9 @@ if (cluster.isMaster) {
       const filteredArray = arrayData.filter((value) => {
         return value.name === name;
       });
-      const sumAllSalaries = filteredArray.reduce(
-        (accumulator, currentValue) => {
-          return accumulator + Number(currentValue.salary);
-        },
-        0
-      );
 
       return res.send({
         arrayData: filteredArray.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -371,16 +327,9 @@ if (cluster.isMaster) {
       const filteredArray = arrayData.filter((value) => {
         return value.name === name;
       });
-      const sumAllSalaries = filteredArray.reduce(
-        (accumulator, currentValue) => {
-          return accumulator + Number(currentValue.salary);
-        },
-        0
-      );
 
       return res.send({
         arrayData: filteredArray.sort(sortFunc),
-        sumAllSalaries,
       });
     }
     return res.send([]);
@@ -396,16 +345,9 @@ if (cluster.isMaster) {
       const filteredArray = arrayData.filter((value) => {
         return value.lastName === lastName;
       });
-      const sumAllSalaries = filteredArray.reduce(
-        (accumulator, currentValue) => {
-          return accumulator + Number(currentValue.salary);
-        },
-        0
-      );
 
       return res.send({
         arrayData: filteredArray.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -416,16 +358,9 @@ if (cluster.isMaster) {
       const filteredArray = arrayData.filter((value) => {
         return value.lastName === lastName;
       });
-      const sumAllSalaries = filteredArray.reduce(
-        (accumulator, currentValue) => {
-          return accumulator + Number(currentValue.salary);
-        },
-        0
-      );
 
       return res.send({
         arrayData: filteredArray.sort(sortFunc),
-        sumAllSalaries,
       });
     }
     return res.send([]);
@@ -436,13 +371,9 @@ if (cluster.isMaster) {
       const rawData = fs.readFileSync("./nosqldatabase/accounts_dev.json");
       const jsonData = JSON.parse(rawData);
       const arrayData = Object.values(jsonData);
-      const sumAllSalaries = arrayData.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
 
       return res.send({
         arrayData: arrayData.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -451,11 +382,7 @@ if (cluster.isMaster) {
       const jsonData = JSON.parse(rawData);
       const arrayData = Object.values(jsonData);
 
-      const sumAllSalaries = arrayData.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
-      return res.send({ arrayData: arrayData.sort(sortFunc), sumAllSalaries });
+      return res.send({ arrayData: arrayData.sort(sortFunc) });
     }
     return res.send([]);
   });
@@ -465,13 +392,9 @@ if (cluster.isMaster) {
       const rawData = fs.readFileSync("./nosqldatabase/accounts_dev.json");
       const jsonData = JSON.parse(rawData);
       const arrayData = Object.values(jsonData);
-      const sumAllSalaries = arrayData.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
 
       return res.send({
         arrayData: arrayData.sort(sortLastName),
-        sumAllSalaries,
       });
     }
 
@@ -480,13 +403,8 @@ if (cluster.isMaster) {
       const jsonData = JSON.parse(rawData);
       const arrayData = Object.values(jsonData);
 
-      const sumAllSalaries = arrayData.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         arrayData: arrayData.sort(sortLastName),
-        sumAllSalaries,
       });
     }
     return res.send([]);
@@ -499,10 +417,7 @@ if (cluster.isMaster) {
       personalEmail,
       userName,
       phoneNumber,
-      companyEmail,
-      companyNumber,
       slackID,
-      salary,
       companyRole,
       notes,
       progress,
@@ -518,10 +433,7 @@ if (cluster.isMaster) {
         userName,
         personalEmail,
         phoneNumber,
-        companyEmail,
-        companyNumber,
         slackID,
-        salary,
         companyRole,
         notes,
         progress,
@@ -534,14 +446,9 @@ if (cluster.isMaster) {
       const jsonToSend = JSON.parse(dataToSend);
       const arrToSend = Object.values(jsonToSend);
 
-      const sumAllSalaries = arrToSend.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         message: "Successfully updates notes and progress for task",
         data: arrToSend.sort(sortFunc),
-        sumAllSalaries,
       });
     }
 
@@ -555,10 +462,7 @@ if (cluster.isMaster) {
         userName,
         personalEmail,
         phoneNumber,
-        companyEmail,
-        companyNumber,
         slackID,
-        salary,
         companyRole,
         notes,
         progress,
@@ -571,95 +475,10 @@ if (cluster.isMaster) {
       const jsonToSend = JSON.parse(dataToSend);
       const arrToSend = Object.values(jsonToSend);
 
-      const sumAllSalaries = arrToSend.reduce((accumulator, currentValue) => {
-        return accumulator + Number(currentValue.salary);
-      }, 0);
-
       return res.send({
         message: "Successfully updates notes and progress for task",
         data: arrToSend.sort(sortFunc),
-        sumAllSalaries,
       });
-    }
-  });
-
-  app.post("/edit-sprint-options", (req, res) => {
-    const { sprintStartedDate, sprintEndDate } = req.body;
-
-    if (process.env.NODE_ENV === "development") {
-      const rawData = fs.readFileSync("./nosqldatabase/sprintoptions_dev.json");
-      const jsonDataToModify = JSON.parse(rawData);
-
-      jsonDataToModify["sprint-options"] = {
-        sprintStartedDate,
-        sprintEndDate,
-      };
-
-      const jsonDataToWrite = JSON.stringify(jsonDataToModify);
-      fs.writeFileSync(
-        "./nosqldatabase/sprintoptions_dev.json",
-        jsonDataToWrite
-      );
-
-      const dataToSend = fs.readFileSync(
-        "./nosqldatabase/sprintoptions_dev.json"
-      );
-      const jsonToSend = JSON.parse(dataToSend);
-      const arrToSend = Object.values(jsonToSend);
-
-      return res.send({
-        message: "Successfully updated sprint options",
-        data: arrToSend[0],
-      });
-    }
-
-    if (process.env.NODE_ENV === "production") {
-      const rawData = fs.readFileSync(
-        "./nosqldatabase/sprintoptions_prod.json"
-      );
-      const jsonDataToModify = JSON.parse(rawData);
-
-      jsonDataToModify["sprint-options"] = {
-        sprintStartedDate,
-        sprintEndDate,
-      };
-
-      const jsonDataToWrite = JSON.stringify(jsonDataToModify);
-      fs.writeFileSync(
-        "./nosqldatabase/sprintoptions_prod.json",
-        jsonDataToWrite
-      );
-
-      const dataToSend = fs.readFileSync(
-        "./nosqldatabase/sprintoptions_prod.json"
-      );
-      const jsonToSend = JSON.parse(dataToSend);
-      const arrToSend = Object.values(jsonToSend);
-
-      return res.send({
-        message: "Successfully updated sprint options",
-        data: arrToSend[0],
-      });
-    }
-  });
-
-  app.get("/sprint-options-details", (req, res) => {
-    if (process.env.NODE_ENV === "development") {
-      const rawData = fs.readFileSync("./nosqldatabase/sprintoptions_dev.json");
-      const jsonDataToModify = JSON.parse(rawData);
-      const arrData = Object.values(jsonDataToModify);
-
-      return res.send({ data: arrData[0] });
-    }
-
-    if (process.env.NODE_ENV === "production") {
-      const rawData = fs.readFileSync(
-        "./nosqldatabase/sprintoptions_prod.json"
-      );
-      const jsonDataToModify = JSON.parse(rawData);
-      const arrayData = Object.values(jsonDataToModify);
-
-      return res.send({ data: arrayData[0] });
     }
   });
 

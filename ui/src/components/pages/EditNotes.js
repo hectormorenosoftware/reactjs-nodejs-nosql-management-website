@@ -79,10 +79,7 @@ class EditNotes extends React.PureComponent {
       userName,
       personalEmail,
       phoneNumber,
-      companyEmail,
-      companyNumber,
       slackID,
-      salary,
       companyRole,
     } = userDetails;
 
@@ -92,10 +89,7 @@ class EditNotes extends React.PureComponent {
       userName,
       personalEmail,
       phoneNumber,
-      companyEmail,
-      companyNumber,
       slackID,
-      salary,
       companyRole,
       notes,
       progress

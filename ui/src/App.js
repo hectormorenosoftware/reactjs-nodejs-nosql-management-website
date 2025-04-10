@@ -6,17 +6,11 @@ import LoginPage from "./components/pages/LoginPage";
 import AdminPage from "./components/pages/AdminPage";
 import CreateEmployeePage from "./components/pages/CreateEmployeePage";
 import EditNotes from "./components/pages/EditNotes";
-import SprintOptions from "./components/pages/SprintOptions";
 
 class App extends React.PureComponent {
   render() {
     return (
       <Switch>
-        <Route
-          exact
-          path="/sprint-options"
-          render={() => <SprintOptions />}
-        ></Route>
         <Route exact path="/edit-notes" render={() => <EditNotes />}></Route>
         <Route
           exact

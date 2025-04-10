@@ -10,7 +10,6 @@ import {
 import {
   stringRegexPattern,
   phoneNumberRegexPattern,
-  numberRegexPattern,
   emailRegexPattern,
   slackRegexPattern,
   companyRoleRegexPattern,
@@ -25,20 +24,14 @@ class CreateEmployeePage extends React.PureComponent {
       name: "",
       lastName: "",
       personalEmail: "",
-      companyEmail: "",
-      companyNumber: "",
       phoneNumber: "",
       slackID: "",
-      salary: "",
       companyRole: "",
       isNameValid: true,
       isLastNameValid: true,
       isCompanyRoleValid: true,
-      isSalaryValid: true,
       isSlackIDValid: true,
       isPersonalEmailValid: true,
-      isCompanyEmailValid: true,
-      isCompanyNumberValid: true,
       isPersonalNumberValid: true,
       formErrors: false,
     };
@@ -120,40 +113,6 @@ class CreateEmployeePage extends React.PureComponent {
       }
     }
 
-    if (name === "companyNumber") {
-      const isPhoneNumberValid = phoneNumberRegexPattern.test(value);
-
-      if (isPhoneNumberValid) {
-        return this.setState({
-          [name]: value,
-          isCompanyNumberValid: true,
-        });
-      }
-      if (isPhoneNumberValid === false) {
-        return this.setState({
-          [name]: "",
-          isCompanyNumberValid: false,
-        });
-      }
-    }
-
-    if (name === "salary") {
-      const isSalaryValid = numberRegexPattern.test(value);
-
-      if (isSalaryValid) {
-        return this.setState({
-          [name]: value,
-          isSalaryValid: true,
-        });
-      }
-      if (isSalaryValid === false) {
-        return this.setState({
-          [name]: "",
-          isSalaryValid: false,
-        });
-      }
-    }
-
     if (name === "personalEmail") {
       const isEmailValid = emailRegexPattern.test(value);
 
@@ -168,24 +127,6 @@ class CreateEmployeePage extends React.PureComponent {
         return this.setState({
           [name]: value,
           isPersonalEmailValid: false,
-        });
-      }
-    }
-
-    if (name === "companyEmail") {
-      const isEmailValid = emailRegexPattern.test(value);
-
-      if (isEmailValid) {
-        return this.setState({
-          [name]: value,
-          isCompanyEmailValid: true,
-          formErrors: false,
-        });
-      }
-      if (isEmailValid === false) {
-        return this.setState({
-          [name]: value,
-          isCompanyEmailValid: false,
         });
       }
     }
@@ -218,29 +159,10 @@ class CreateEmployeePage extends React.PureComponent {
 
   createEmployee = () => {
     const { createEmployeeFuncProp } = this.props;
-    const {
-      name,
-      lastName,
-      personalEmail,
-      companyEmail,
-      companyNumber,
-      phoneNumber,
-      slackID,
-      salary,
-      companyRole,
-    } = this.state;
+    const { name, lastName, personalEmail, phoneNumber, slackID, companyRole } =
+      this.state;
 
-    const isCompanyEmailValid = emailRegexPattern.test(companyEmail);
     const isPersonalEmailValid = emailRegexPattern.test(personalEmail);
-
-    if (companyEmail.length >= 0) {
-      if (isCompanyEmailValid === false) {
-        this.setState({
-          isCompanyEmailValid: false,
-          formErrors: true,
-        });
-      }
-    }
 
     if (personalEmail.length >= 0) {
       if (isPersonalEmailValid === false) {
@@ -256,10 +178,7 @@ class CreateEmployeePage extends React.PureComponent {
       lastName.length === 0 ||
       personalEmail.length === 0 ||
       phoneNumber.length === 0 ||
-      companyEmail.length === 0 ||
-      companyNumber.length === 0 ||
       slackID.length === 0 ||
-      salary.length === 0 ||
       companyRole.length === 0
     ) {
       return this.setState({
@@ -267,17 +186,14 @@ class CreateEmployeePage extends React.PureComponent {
       });
     }
 
-    if (isCompanyEmailValid && isPersonalEmailValid) {
+    if (isPersonalEmailValid) {
       createEmployeeFuncProp(
         name,
         lastName.replace(/\s+/g, ""),
         name + lastName.replace(/\s+/g, ""),
         personalEmail,
         phoneNumber,
-        companyEmail,
-        companyNumber,
         slackID,
-        salary,
         companyRole,
         "",
         ""
@@ -286,11 +202,8 @@ class CreateEmployeePage extends React.PureComponent {
         name: "",
         lastName: "",
         personalEmail: "",
-        companyEmail: "",
-        companyNumber: "",
         phoneNumber: "",
         slackID: "",
-        salary: "",
         companyRole: "",
         formErrors: false,
       });
@@ -302,21 +215,15 @@ class CreateEmployeePage extends React.PureComponent {
       name,
       lastName,
       personalEmail,
-      companyEmail,
-      companyNumber,
       phoneNumber,
       slackID,
-      salary,
       companyRole,
-      isSalaryValid,
       isSlackIDValid,
       isNameValid,
       isLastNameValid,
       isCompanyRoleValid,
       isPersonalEmailValid,
-      isCompanyEmailValid,
       isPersonalNumberValid,
-      isCompanyNumberValid,
       formErrors,
     } = this.state;
 
@@ -362,7 +269,7 @@ class CreateEmployeePage extends React.PureComponent {
         <input
           type="email"
           name="personalEmail"
-          placeholder="Enter personal email"
+          placeholder="Enter email"
           className="search-bar margin-create-employee-fields"
           onChange={this.setValue}
           value={personalEmail}
@@ -372,23 +279,11 @@ class CreateEmployeePage extends React.PureComponent {
             Email can not contain special characters
           </p>
         ) : null}
-        <input
-          type="email"
-          name="companyEmail"
-          placeholder="Enter company email"
-          className="search-bar margin-create-employee-fields"
-          onChange={this.setValue}
-          value={companyEmail}
-        />
-        {isCompanyEmailValid === false ? (
-          <p className="form-errors">
-            Email can not contain special characters
-          </p>
-        ) : null}
+
         <input
           type="text"
           name="phoneNumber"
-          placeholder="Enter personal phone number"
+          placeholder="Enter phone number"
           className="search-bar margin-create-employee-fields"
           onChange={this.setValue}
           value={phoneNumber}
@@ -398,19 +293,7 @@ class CreateEmployeePage extends React.PureComponent {
             Phone Number can not contain letters or special characters
           </p>
         ) : null}
-        <input
-          type="text"
-          name="companyNumber"
-          placeholder="Enter company phone number"
-          className="search-bar margin-create-employee-fields"
-          onChange={this.setValue}
-          value={companyNumber}
-        />
-        {isCompanyNumberValid === false ? (
-          <p className="form-errors">
-            Phone Number can not contain letters or special characters
-          </p>
-        ) : null}
+
         <input
           type="text"
           name="slackID"
@@ -428,29 +311,17 @@ class CreateEmployeePage extends React.PureComponent {
         <input
           type="text"
           name="companyRole"
-          placeholder="Enter company role"
+          placeholder="Enter job name"
           className="search-bar margin-create-employee-fields"
           onChange={this.setValue}
           value={companyRole}
         />
         {isCompanyRoleValid === false ? (
           <p className="form-errors">
-            Company role can not contain numbers or special characters
+            Job name can not contain numbers or special characters
           </p>
         ) : null}
-        <input
-          type="text"
-          name="salary"
-          placeholder="Enter salary numbers most not have comma's"
-          className="search-bar margin-create-employee-fields"
-          onChange={this.setValue}
-          value={salary}
-        />
-        {isSalaryValid === false ? (
-          <p className="form-errors">
-            Salary can not contain letters, special characters, or comma
-          </p>
-        ) : null}
+
         {formErrors ? (
           <p className="form-errors">
             This form has errors and can not be submitted

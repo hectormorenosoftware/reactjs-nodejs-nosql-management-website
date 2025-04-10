@@ -1,4 +1,3 @@
-import { editSprintOptions } from "../../api/api";
 import {
   GET_DATA,
   GET_DATA_SUCCESS,
@@ -37,28 +36,16 @@ import {
   UPDATE_NOTES_AND_TASK_REQUEST,
   UPDATE_NOTES_AND_TASK_SUCCESS,
   UPDATE_NOTES_AND_TASK_FAILURE,
-  EDIT_SPRINT_OPTIONS_REQUEST,
-  EDIT_SPRINT_OPTIONS_SUCCESS,
-  EDIT_SPRINT_OPTIONS_FAILURE,
-  GET_SPRINT_OPTIONS_REQUEST,
-  GET_SPRINT_OPTIONS_SUCCESS,
-  GET_SPRINT_OPTIONS_FAILURE,
 } from "../../types";
 
 const INTIAL_STATE = {
   error: false,
   loading: false,
   data: [],
-  sprintOptions: {
-    sprintStartedDate: "",
-    sprintEndDate: "",
-  },
   loginSuccess: false,
   createAdminMessage: "",
   createEmployeeMessage: "",
   deletedEmployeeMessage: "",
-  editedSprintOptionsMessage: "",
-  salariesTotal: 0,
   userName: "",
   errorMessage: "",
   changedColor: false,
@@ -66,67 +53,6 @@ const INTIAL_STATE = {
 
 function userReducer(state = INTIAL_STATE, action) {
   switch (action.type) {
-    case EDIT_SPRINT_OPTIONS_REQUEST:
-      return {
-        ...state,
-        loading: true,
-        error: false,
-        sprintOptions: {
-          sprintStartedDate: "",
-          sprintEndDate: "",
-        },
-        editedSprintOptionsMessage: "",
-      };
-    case EDIT_SPRINT_OPTIONS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        error: false,
-        sprintOptions: {
-          ...action.payload.data,
-        },
-        editedSprintOptionsMessage: action.payload.editedSprintOptionsMessage,
-      };
-    case EDIT_SPRINT_OPTIONS_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: true,
-        sprintOptions: {
-          sprintStartedDate: "",
-          sprintEndDate: "",
-        },
-        editedSprintOptionsMessage: "",
-      };
-    case GET_SPRINT_OPTIONS_REQUEST:
-      return {
-        ...state,
-        loading: true,
-        error: false,
-        sprintOptions: {
-          sprintStartedDate: "",
-          sprintEndDate: "",
-        },
-      };
-    case GET_SPRINT_OPTIONS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        error: false,
-        sprintOptions: {
-          ...action.payload.data,
-        },
-      };
-    case GET_SPRINT_OPTIONS_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: true,
-        sprintOptions: {
-          sprintStartedDate: "",
-          sprintEndDate: "",
-        },
-      };
     case RESET_DELETED_MESSAGE:
       return {
         ...state,
@@ -146,7 +72,6 @@ function userReducer(state = INTIAL_STATE, action) {
       return {
         ...state,
         data: [...action.payload.arrayData],
-        salariesTotal: action.payload.sumAllSalaries,
         loading: false,
       };
     case GET_DATA_ERROR:
@@ -155,7 +80,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: true,
         loading: false,
         data: [],
-        salariesTotal: 0,
       };
     case GET_USER_DATA:
       return {
@@ -184,7 +108,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: true,
         data: [],
-        salariesTotal: 0,
       };
     case SEARCH_BY_NAME_SUCCESS:
       return {
@@ -192,7 +115,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: false,
         data: [...action.payload.arrayData],
-        salariesTotal: action.payload.sumAllSalaries,
       };
     case SEARCH_BY_NAME_FAILURE:
       return {
@@ -200,7 +122,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: true,
         loading: false,
         data: [],
-        salariesTotal: 0,
       };
     case LOGIN_REQUEST:
       return {
@@ -270,7 +191,6 @@ function userReducer(state = INTIAL_STATE, action) {
         loading: false,
         createEmployeeMessage: action.payload.message,
         data: [...action.payload.data],
-        salariesTotal: action.payload.sumAllSalaries,
       };
     case CREATE_EMPLOYEE_FAILURE:
       return {
@@ -293,7 +213,6 @@ function userReducer(state = INTIAL_STATE, action) {
         loading: false,
         deletedEmployeeMessage: action.payload.message,
         data: [...action.payload.data],
-        salariesTotal: action.payload.sumAllSalaries,
       };
     case DELETE_USER_FAILURE:
       return {
@@ -317,7 +236,6 @@ function userReducer(state = INTIAL_STATE, action) {
         loading: false,
         error: false,
         data: [...action.payload.arrayData],
-        salariesTotal: action.payload.sumAllSalaries,
       };
 
     case SEARCH_BY_LAST_NAME_FAILURE:
@@ -326,7 +244,6 @@ function userReducer(state = INTIAL_STATE, action) {
         loading: false,
         error: true,
         data: [],
-        salariesTotal: 0,
       };
 
     case SORT_BY_FIRST_NAME_REQUEST:
@@ -335,7 +252,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: true,
         data: [],
-        salariesTotal: 0,
       };
     case SORT_BY_FIRST_NAME_SUCCESS:
       return {
@@ -343,7 +259,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: false,
         data: [...action.payload.arrayData],
-        salariesTotal: action.payload.sumAllSalaries,
       };
     case SORT_BY_FIRST_NAME_FAILURE:
       return {
@@ -351,7 +266,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: true,
         loading: false,
         data: [],
-        salariesTotal: 0,
       };
     case SORT_BY_LAST_NAME_REQUEST:
       return {
@@ -359,7 +273,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: true,
         data: [],
-        salariesTotal: 0,
       };
     case SORT_BY_LAST_NAME_SUCCESS:
       return {
@@ -367,7 +280,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: false,
         data: [...action.payload.arrayData],
-        salariesTotal: action.payload.sumAllSalaries,
       };
 
     case SORT_BY_LAST_NAME_FAILURE:
@@ -376,7 +288,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: true,
         loading: false,
         data: [],
-        salariesTotal: 0,
       };
 
     case UPDATE_NOTES_AND_TASK_REQUEST:
@@ -391,7 +302,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: false,
         loading: false,
         data: [...action.payload.data],
-        salariesTotal: action.payload.sumAllSalaries,
       };
     case UPDATE_NOTES_AND_TASK_FAILURE:
       return {
@@ -399,7 +309,6 @@ function userReducer(state = INTIAL_STATE, action) {
         error: true,
         loading: false,
         data: [],
-        salariesTotal: 0,
       };
 
     case RESET_ALL_DATA:

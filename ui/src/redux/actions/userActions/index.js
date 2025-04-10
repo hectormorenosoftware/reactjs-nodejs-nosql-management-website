@@ -36,12 +36,6 @@ import {
   UPDATE_NOTES_AND_TASK_REQUEST,
   UPDATE_NOTES_AND_TASK_SUCCESS,
   UPDATE_NOTES_AND_TASK_FAILURE,
-  EDIT_SPRINT_OPTIONS_REQUEST,
-  EDIT_SPRINT_OPTIONS_SUCCESS,
-  EDIT_SPRINT_OPTIONS_FAILURE,
-  GET_SPRINT_OPTIONS_REQUEST,
-  GET_SPRINT_OPTIONS_SUCCESS,
-  GET_SPRINT_OPTIONS_FAILURE,
 } from "../../types";
 import {
   getUsersTableData,
@@ -55,37 +49,7 @@ import {
   sortByFirstName,
   sortByLastName,
   updatesNotesAndProgress,
-  editSprintOptions,
-  getSprintOptions,
 } from "../../api/api";
-
-export function editSprintOptionsRedux(sprintStartedDate, sprintEndDate) {
-  return async function (dispatch) {
-    dispatch({ type: EDIT_SPRINT_OPTIONS_REQUEST });
-    try {
-      const data = await editSprintOptions(sprintStartedDate, sprintEndDate);
-
-      return dispatch({ type: EDIT_SPRINT_OPTIONS_SUCCESS, payload: data });
-    } catch (e) {
-      dispatch({ type: EDIT_SPRINT_OPTIONS_FAILURE });
-      throw new Error(e);
-    }
-  };
-}
-
-export function getSprintOptionsRedux() {
-  return async function (dispatch) {
-    dispatch({ type: GET_SPRINT_OPTIONS_REQUEST });
-    try {
-      const data = await getSprintOptions();
-
-      return dispatch({ type: GET_SPRINT_OPTIONS_SUCCESS, payload: data });
-    } catch (e) {
-      dispatch({ type: GET_SPRINT_OPTIONS_FAILURE });
-      throw new Error(e);
-    }
-  };
-}
 
 export function resetDeletedMessageRedux() {
   return function (dispatch) {
@@ -173,10 +137,7 @@ export function createEmployeeRedux(
   userName,
   personalEmail,
   phoneNumber,
-  companyEmail,
-  companyNumber,
   slackID,
-  salary,
   companyRole,
   notes,
   progress
@@ -190,10 +151,7 @@ export function createEmployeeRedux(
         userName,
         personalEmail,
         phoneNumber,
-        companyEmail,
-        companyNumber,
         slackID,
-        salary,
         companyRole,
         notes,
         progress
@@ -213,10 +171,7 @@ export function updateTaskAndProgressRedux(
   userName,
   personalEmail,
   phoneNumber,
-  companyEmail,
-  companyNumber,
   slackID,
-  salary,
   companyRole,
   notes,
   progress
@@ -229,10 +184,7 @@ export function updateTaskAndProgressRedux(
       userName,
       personalEmail,
       phoneNumber,
-      companyEmail,
-      companyNumber,
       slackID,
-      salary,
       companyRole,
       notes,
       progress,

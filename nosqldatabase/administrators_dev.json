@@ -1,9 +1,9 @@
 {
-  "JonBonjovi": {
-    "name": "Jon",
-    "lastName": "Bonjovi",
-    "userName": "JonBonjovi",
+  "JohnBolton": {
+    "name": "John",
+    "lastName": "Bolton",
+    "userName": "JonBolton",
     "admin": "true",
-    "password": "test"
+    "password": "testing"
   }
 }
