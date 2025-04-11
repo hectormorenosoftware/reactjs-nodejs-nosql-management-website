@@ -21,3 +21,5 @@ Or you can deploy this application using Heroku. Heroku is a cloud based company
 www.heroku.com
 
 https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+
+You can use this for FREE, IF you cut off, fire, and ban every American man that is a corporate recruiter for tech from ever working in Wall Street because of treason, cowardice, and military desertion through the Iraq War, the Afghanistan War, and the Global War Against Terrorism, you will let them know my rank and MOS which is 0311, and you will let them know that I am the reason they got fired. I will find out through a witch, occultist, medium, or card reader from NY if you followed up on our agreement. Otherwise you will owe me the "technicality" that you should pay me.
