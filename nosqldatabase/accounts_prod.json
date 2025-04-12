@@ -1,1 +1,90 @@
-{"AndrewBolton":{"name":"Andrew","lastName":"Bolton","userName":"AndrewBolton","personalEmail":"andrewbolton@gmail.com","phoneNumber":"202-775-9804","slackID":"andrewbolton","companyRole":"VP Finance","notes":"","progress":""},"MichealBolton":{"name":"Micheal","lastName":"Bolton","userName":"MichealBolton","personalEmail":"michaelbolton@gmail.com","phoneNumber":"202-777-7777","slackID":"michaelbolton","companyRole":"VP Engineering","notes":"","progress":""},"LaurenMcCurdy":{"name":"Lauren","lastName":"McCurdy","userName":"LaurenMcCurdy","personalEmail":"laurenmcurdy@gmail.com","phoneNumber":"202-774-7785","slackID":"laurenmccurdy","companyRole":"Marketing Director","notes":"","progress":""},"PeteWesthead":{"name":"Pete","lastName":"Westhead","userName":"PeteWesthead","personalEmail":"petewesthead@gmail.com","phoneNumber":"202-665-6678","slackID":"petewesthead","companyRole":"Marketing Coordinator","notes":"","progress":""},"JohnWesthead":{"name":"John","lastName":"Westhead","userName":"JohnWesthead","personalEmail":"johnwesthead@gmail.com","phoneNumber":"202-771-5758","slackID":"johnwesthead","companyRole":"Talent Coordinator","notes":"","progress":""},"AndrewWesthead":{"name":"Andrew","lastName":"Westhead","userName":"AndrewWesthead","personalEmail":"andrewwesthead@gmail.com","phoneNumber":"202-887-9997","slackID":"andrewwesthead","companyRole":"Marketing Manager","notes":"","progress":""},"NormanTierson":{"name":"Norman","lastName":"Tierson","userName":"NormanTierson","personalEmail":"normantierson@gmail.com","phoneNumber":"202-771-8495","slackID":"normantierson","companyRole":"Marketing Executive","notes":"","progress":""},"NormanBolton":{"name":"Norman","lastName":"Bolton","userName":"NormanBolton","personalEmail":"normanbolton@gmail.com","phoneNumber":"587-552-7585","slackID":"normanbolton","companyRole":"Marketing Director","notes":"","progress":""}}
+{
+  "AndrewBolton": {
+    "name": "Andrew",
+    "lastName": "Bolton",
+    "userName": "AndrewBolton",
+    "personalEmail": "andrewbolton@gmail.com",
+    "phoneNumber": "202-775-9804",
+    "slackID": "andrewbolton",
+    "companyRole": "VP Finance",
+    "notes": "",
+    "progress": ""
+  },
+  "MichealBolton": {
+    "name": "Micheal",
+    "lastName": "Bolton",
+    "userName": "MichealBolton",
+    "personalEmail": "michaelbolton@gmail.com",
+    "phoneNumber": "202-777-7777",
+    "slackID": "michaelbolton",
+    "companyRole": "VP Engineering",
+    "notes": "",
+    "progress": ""
+  },
+  "LaurenMcCurdy": {
+    "name": "Lauren",
+    "lastName": "McCurdy",
+    "userName": "LaurenMcCurdy",
+    "personalEmail": "laurenmcurdy@gmail.com",
+    "phoneNumber": "202-774-7785",
+    "slackID": "laurenmccurdy",
+    "companyRole": "Marketing Director",
+    "notes": "",
+    "progress": ""
+  },
+  "PeteWesthead": {
+    "name": "Pete",
+    "lastName": "Westhead",
+    "userName": "PeteWesthead",
+    "personalEmail": "petewesthead@gmail.com",
+    "phoneNumber": "202-665-6678",
+    "slackID": "petewesthead",
+    "companyRole": "Marketing Coordinator",
+    "notes": "",
+    "progress": ""
+  },
+  "JohnWesthead": {
+    "name": "John",
+    "lastName": "Westhead",
+    "userName": "JohnWesthead",
+    "personalEmail": "johnwesthead@gmail.com",
+    "phoneNumber": "202-771-5758",
+    "slackID": "johnwesthead",
+    "companyRole": "Talent Coordinator",
+    "notes": "",
+    "progress": ""
+  },
+  "AndrewWesthead": {
+    "name": "Andrew",
+    "lastName": "Westhead",
+    "userName": "AndrewWesthead",
+    "personalEmail": "andrewwesthead@gmail.com",
+    "phoneNumber": "202-887-9997",
+    "slackID": "andrewwesthead",
+    "companyRole": "Marketing Manager",
+    "notes": "",
+    "progress": ""
+  },
+  "NormanTierson": {
+    "name": "Norman",
+    "lastName": "Tierson",
+    "userName": "NormanTierson",
+    "personalEmail": "normantierson@gmail.com",
+    "phoneNumber": "202-771-8495",
+    "slackID": "normantierson",
+    "companyRole": "Marketing Executive",
+    "notes": "",
+    "progress": ""
+  },
+  "NormanBolton": {
+    "name": "Norman",
+    "lastName": "Bolton",
+    "userName": "NormanBolton",
+    "personalEmail": "normanbolton@gmail.com",
+    "phoneNumber": "587-552-7585",
+    "slackID": "normanbolton",
+    "companyRole": "Marketing Director",
+    "notes": "",
+    "progress": ""
+  }
+}
