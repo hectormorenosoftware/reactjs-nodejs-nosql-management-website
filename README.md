@@ -27,3 +27,5 @@ Note: To make the json data look pretty use Command + S (OSX)
 You can use this software for free.
 Sillicon Valley 2025
 Developer: Hector Moreno
+
+Note: There is a high possibility that Department of Homeland Security is not screening Indian H1-B Tech workers at all, that is why there are so many of them that claim to have many years of experience, but deliver code that has regressions every sprint.
