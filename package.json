@@ -1,12 +1,12 @@
 {
-  "name": "react-node-nosql-example",
+  "name": "react-nodejs-nosql-employee-management-website",
   "version": "1.0.0",
-  "description": "This is the server for Project Management Tools.",
+  "description": "Organize your employees and get rid of those old sticky notes.",
   "main": "index.js",
   "scripts": {
     "test": ""
   },
-  "author": "Hector Moreno Gomez",
+  "author": "Hector Moreno",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.2",
