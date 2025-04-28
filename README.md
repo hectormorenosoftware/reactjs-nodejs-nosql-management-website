@@ -32,4 +32,4 @@ You can use this software for free, Hector Moreno is allowing you to use this fo
 Sillicon Valley 2025
 Developer: Hector Moreno
 
-Note: There is a high possibility that Department of Homeland Security is not screening Indian H1-B Tech workers at all, that is why there are so many of them that deliver code with bugs, glitches, and regressions even though they claim to have college degrees in computer science and many years of experience. I think they just want corporations to screen tech workers with their own money since it's a very expensive and costly process.
+Note: There is a high possibility an engineer might be a fraud if he doesn't deliver a website without gltiches or bugs. If you use this to organize your employees I want to remind you that SQL, MySQL, and PostgreSQL will always give you JSON data, the data from a database is always recreated into JSON by your server. That is why I rather just read and write into a JSON file in this website.
