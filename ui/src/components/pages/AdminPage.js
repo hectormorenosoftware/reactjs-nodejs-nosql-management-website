@@ -172,7 +172,7 @@ class AdminPage extends React.PureComponent {
           <img src={MicrosoftLogo} width={"50px"} height={"50px"} />
         </div>
         <h1 id="align-text">Create Admin</h1>
-        <h3 className="form-warning" id="align-text">
+        <h3 id="align-text">
           Remember the username will be the first and last name of the person
           without spaces for example: JohnRafford
         </h3>
