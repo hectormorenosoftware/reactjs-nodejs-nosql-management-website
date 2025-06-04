@@ -50,10 +50,18 @@ h6 {
 
 #width-login-username {
   width: 25rem;
+
+  @media (max-width: 420px) {
+    width: 22rem;
+  }
 }
 
 #width-login-password {
   width: 25rem;
+
+  @media (max-width: 420px) {
+    width: 22rem;
+  }
 }
 
 .flexbox-column {
