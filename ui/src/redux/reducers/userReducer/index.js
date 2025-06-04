@@ -162,7 +162,7 @@ function userReducer(state = INTIAL_STATE, action) {
         ...state,
         error: false,
         loading: false,
-        createAdminMessage: "Successfully Created Admin",
+        createAdminMessage: action.payload,
       };
     case CREATE_ADMIN_FAILURE:
       return {
