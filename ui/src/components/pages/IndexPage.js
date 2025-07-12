@@ -424,10 +424,8 @@ class IndexPage extends React.PureComponent {
 
           <div
             style={{
-              overflow: "hidden",
               overflowY: "scroll",
-              overflowX: "scroll",
-              height: "30rem",
+              height: "500px",
             }}
           >
             <table className="table-data">
@@ -472,10 +470,19 @@ class IndexPage extends React.PureComponent {
                         </td>
 
                         <td>{value.slackID}</td>
-                        <td style={{ whiteSpace: "nowrap" }}>
-                          {value.notes.length === 0
-                            ? "No notes yet"
-                            : value.notes}
+                        <td>
+                          <span
+                            style={{
+                              height: "100px",
+                              width: "200px",
+                              overflowY: "scroll",
+                              display: "block",
+                            }}
+                          >
+                            {value.notes.length === 0
+                              ? "No notes yet"
+                              : value.notes}
+                          </span>
                         </td>
                         <td style={{ whiteSpace: "nowrap" }}>
                           {value.progress.length === 0

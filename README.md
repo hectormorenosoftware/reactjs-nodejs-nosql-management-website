@@ -1,6 +1,6 @@
 Description:
 This website will allow you to organize your employees and add notes on employees to get rid of
-those old sticky notes.
+those old sticky notes that would cause clutter on your workspace.
 
 To start server in development mode:
 
@@ -28,8 +28,8 @@ https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
 
 Note: To make the json data look pretty use Command + S (OSX)
 
-You can use this software for free, Hector Moreno is allowing you to use this for free.
-Sillicon Valley 2025
-Developer: Hector Moreno
+You can use this software for free, Hector Moreno is allowing you to use this for free, every nation in this world can use this for free.
 
-Note: There is a high possibility an engineer might be a fraud if he doesn't deliver a website without gltiches or bugs. If you use this to organize your employees I want to remind you that SQL, MySQL, and PostgreSQL will always give you JSON data, the data from a database is always recreated into JSON by your server. That is why I rather just read and write into a JSON file in this website.
+Tech Crunch Disrupt 2025
+Silicon Valley 2025
+Full-Stack Developer: Hector Moreno
